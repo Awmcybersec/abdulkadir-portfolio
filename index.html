@@ -630,20 +630,43 @@
     }
 
     .project-visual {
-      width: 100%;
-      height: 220px;
-      flex: none;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 50%,rgba(53,230,176,.18),transparent 55%),
-        linear-gradient(135deg,#0a2933,#07131e);
-      font: 700 27px "Space Grotesk";
-      color: var(--green);
-      letter-spacing: 2px;
-    }
+  width: 100%;
+  height: 220px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(53,230,176,.18),transparent 55%),
+    linear-gradient(135deg,#0a2933,#07131e);
+  font: 700 27px "Space Grotesk";
+  color: var(--green);
+  letter-spacing: 2px;
+}
 
+/* AWM NEXUS - VERTICAL */
+.nexus-visual {
+  height: 380px;
+}
+
+.nexus-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* HOME LAB - HORIZONTAL */
+.lab-visual {
+  height: 220px;
+}
+
+.lab-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
     .project-visual img {
       width: 100%;
       height: 100%;
