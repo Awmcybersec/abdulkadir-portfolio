@@ -18,6 +18,9 @@ Holds a Bachelor of Science in Information Technology from Puntland State Univer
 Focused on building secure technology solutions, investigating security issues, improving IT operations, and developing AI-powered cybersecurity platforms.
 
 ## Education
+**Master of Science in Computer Science (MSc Computer Science)
+Currently Enrolled — Expected Completion: 2027
+Approximately 6 months remaining.
 
 **Bachelor of Science in Information Technology (BSc IT)**  
 Puntland State University (PSU)
