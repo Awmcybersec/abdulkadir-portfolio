@@ -491,6 +491,60 @@
       font-size: 17px;
     }
 
+    /* PROFESSIONAL EXPERIENCE */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 18px;
+    }
+
+    .experience-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(145deg,rgba(11,34,45,.9),rgba(5,17,25,.95));
+      transition: .25s;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(53,230,176,.55);
+      box-shadow: 0 12px 35px rgba(0,0,0,.22);
+    }
+
+    .experience-card h3 {
+      color: var(--green);
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .experience-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .experience-card ul {
+      padding-left: 19px;
+    }
+
+    .experience-card li {
+      color: #d4e2e2;
+      font-size: 12px;
+      margin: 9px 0;
+    }
+
+    .experience-card li::marker {
+      color: var(--green);
+    }
+
+    .experience-highlight {
+      color: var(--green);
+      font: 700 30px "Space Grotesk";
+      margin-bottom: 8px;
+    }
+
     /* SKILLS */
 
     .skills-grid {
@@ -630,43 +684,44 @@
     }
 
     .project-visual {
-  width: 100%;
-  height: 220px;
-  flex: none;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 50% 50%,rgba(53,230,176,.18),transparent 55%),
-    linear-gradient(135deg,#0a2933,#07131e);
-  font: 700 27px "Space Grotesk";
-  color: var(--green);
-  letter-spacing: 2px;
-}
+      width: 100%;
+      height: 220px;
+      flex: none;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 50%,rgba(53,230,176,.18),transparent 55%),
+        linear-gradient(135deg,#0a2933,#07131e);
+      font: 700 27px "Space Grotesk";
+      color: var(--green);
+      letter-spacing: 2px;
+    }
 
-/* AWM NEXUS - VERTICAL */
-.nexus-visual {
-  height: 380px;
-}
+    /* AWM NEXUS - VERTICAL */
+    .nexus-visual {
+      height: 380px;
+    }
 
-.nexus-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
+    .nexus-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
 
-/* HOME LAB - HORIZONTAL */
-.lab-visual {
-  height: 220px;
-}
+    /* HOME LAB - HORIZONTAL */
+    .lab-visual {
+      height: 220px;
+    }
 
-.lab-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
+    .lab-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
     .project-visual img {
       width: 100%;
       height: 100%;
@@ -987,6 +1042,10 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
       .skills-grid {
         grid-template-columns: repeat(3,1fr);
         gap: 9px;
@@ -1092,6 +1151,7 @@
     <nav class="nav-links" id="navLinks">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#certifications">Certifications</a>
@@ -1212,126 +1272,210 @@
     </div>
   </section>
 
+  <!-- PROFESSIONAL EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-no">02 / Professional Experience</div>
+        <h2>Professional Experience & Expertise</h2>
+        <p>
+          Practical IT and cybersecurity experience, technical capabilities,
+          and hands-on expertise across multiple technology environments.
+        </p>
+      </div>
+
+      <div class="experience-grid reveal">
+
+        <article class="experience-card">
+          <div class="experience-highlight">9+ Years</div>
+          <h3>IT Professional Experience</h3>
+          <p>
+            Professional experience across IT support, infrastructure,
+            networking, and systems administration.
+          </p>
+          <ul>
+            <li>IT support and technical troubleshooting</li>
+            <li>Computer systems and infrastructure administration</li>
+            <li>Network configuration and diagnostics</li>
+            <li>Windows and Linux environments</li>
+            <li>Hardware and software problem resolution</li>
+            <li>Technical support and system maintenance</li>
+          </ul>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-highlight">4+ Years</div>
+          <h3>Cybersecurity Experience</h3>
+          <p>
+            Practical cybersecurity experience involving security operations,
+            security assessment, and authorized testing environments.
+          </p>
+          <ul>
+            <li>Security Operations Center (SOC) activities</li>
+            <li>Security monitoring and incident investigation</li>
+            <li>Vulnerability assessment</li>
+            <li>Authorized penetration testing</li>
+            <li>Web application and network security testing</li>
+            <li>Network traffic analysis using Wireshark</li>
+            <li>Kali Linux, Nmap, and Burp Suite</li>
+          </ul>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-highlight">Technical</div>
+          <h3>Systems & Infrastructure</h3>
+          <p>
+            Technical capabilities in maintaining, troubleshooting,
+            and supporting IT environments.
+          </p>
+          <ul>
+            <li>Linux and Windows administration</li>
+            <li>Networking and connectivity troubleshooting</li>
+            <li>IT infrastructure support</li>
+            <li>System configuration and maintenance</li>
+          </ul>
+        </article>
+
+        <article class="experience-card">
+          <div class="experience-highlight">AI & Development</div>
+          <h3>Software & AI-Powered Development</h3>
+          <p>
+            Practical work involving software development and
+            AI-assisted technology solutions.
+          </p>
+          <ul>
+            <li>AI-assisted software development</li>
+            <li>AI-powered application development</li>
+            <li>Technical problem-solving and debugging</li>
+            <li>Python, JavaScript, and TypeScript</li>
+            <li>Git and GitHub project management</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- SKILLS -->
-  
-<!-- SKILLS -->
-<section id="skills">
-  <div class="container">
+  <section id="skills">
+    <div class="container">
 
-    <div class="section-head reveal">
-      <div class="section-no">02 / Technical Skills</div>
-      <h2>Tools & Technologies</h2>
-      <p>
-        Technologies and technical areas I work with, study,
-        and apply in practical projects and labs.
-      </p>
-    </div>
-
-    <!-- 1. IT INFRASTRUCTURE -->
-    <div class="skill-category reveal">
-      <h3 class="skill-category-title">
-        IT Infrastructure & System Administration
-      </h3>
-
-      <div class="skills-grid">
-        <div class="skill"><span class="symbol">🖥️</span><span>IT Support</span></div>
-        <div class="skill"><span class="symbol">⚙️</span><span>System Administration</span></div>
-        <div class="skill"><span class="symbol">🌐</span><span>Computer Networking</span></div>
-        <div class="skill"><span class="symbol">🪟</span><span>Windows Server</span></div>
-        <div class="skill"><span class="symbol">🐧</span><span>Linux Administration</span></div>
-        <div class="skill"><span class="symbol">🔧</span><span>Hardware & Troubleshooting</span></div>
-        <div class="skill"><span class="symbol">📡</span><span>TCP/IP & DNS</span></div>
-        <div class="skill"><span class="symbol">🔐</span><span>Active Directory</span></div>
-        <div class="skill"><span class="symbol">☁️</span><span>Microsoft 365</span></div>
-        <div class="skill"><span class="symbol">▣</span><span>VMware & Virtualization</span></div>
+      <div class="section-head reveal">
+        <div class="section-no">03 / Technical Skills</div>
+        <h2>Tools & Technologies</h2>
+        <p>
+          Technologies and technical areas I work with, study,
+          and apply in practical projects and labs.
+        </p>
       </div>
-    </div>
 
-    <!-- 2. CYBERSECURITY & SOC -->
-    <div class="skill-category reveal">
-      <h3 class="skill-category-title">
-        Cybersecurity & SOC Operations
-      </h3>
+      <!-- 1. IT INFRASTRUCTURE -->
+      <div class="skill-category reveal">
+        <h3 class="skill-category-title">
+          IT Infrastructure & System Administration
+        </h3>
 
-      <div class="skills-grid">
-        <div class="skill"><span class="symbol">🛡️</span><span>Cybersecurity</span></div>
-        <div class="skill"><span class="symbol">🔍</span><span>Security Operations (SOC)</span></div>
-        <div class="skill"><span class="symbol">🚨</span><span>Incident Response</span></div>
-        <div class="skill"><span class="symbol">📊</span><span>Security Monitoring</span></div>
-        <div class="skill"><span class="symbol">🧪</span><span>Penetration Testing</span></div>
-        <div class="skill"><span class="symbol">⌁</span><span>Kali Linux</span></div>
-        <div class="skill"><span class="symbol">🐛</span><span>Vulnerability Assessment</span></div>
-        <div class="skill"><span class="symbol">🌐</span><span>Web Application Security</span></div>
-        <div class="skill"><span class="symbol">🔎</span><span>Network Security</span></div>
-        <div class="skill"><span class="symbol">⬡</span><span>Security Tools</span></div>
-        <div class="skill"><span class="symbol">📁</span><span>Digital Forensics</span></div>
-        <div class="skill"><span class="symbol">🧠</span><span>Threat Intelligence</span></div>
-        <div class="skill"><span class="symbol">📝</span><span>Security Assessment</span></div>
+        <div class="skills-grid">
+          <div class="skill"><span class="symbol">🖥️</span><span>IT Support</span></div>
+          <div class="skill"><span class="symbol">⚙️</span><span>System Administration</span></div>
+          <div class="skill"><span class="symbol">🌐</span><span>Computer Networking</span></div>
+          <div class="skill"><span class="symbol">🪟</span><span>Windows Server</span></div>
+          <div class="skill"><span class="symbol">🐧</span><span>Linux Administration</span></div>
+          <div class="skill"><span class="symbol">🔧</span><span>Hardware & Troubleshooting</span></div>
+          <div class="skill"><span class="symbol">📡</span><span>TCP/IP & DNS</span></div>
+          <div class="skill"><span class="symbol">🔐</span><span>Active Directory</span></div>
+          <div class="skill"><span class="symbol">☁️</span><span>Microsoft 365</span></div>
+          <div class="skill"><span class="symbol">▣</span><span>VMware & Virtualization</span></div>
+        </div>
       </div>
-    </div>
 
-    <!-- 3. ADVANCED CYBERSECURITY -->
-    <div class="skill-category reveal">
-      <h3 class="skill-category-title">
-        Advanced Cybersecurity Tools & Technologies
-      </h3>
+      <!-- 2. CYBERSECURITY & SOC -->
+      <div class="skill-category reveal">
+        <h3 class="skill-category-title">
+          Cybersecurity & SOC Operations
+        </h3>
 
-      <div class="skills-grid">
-        <div class="skill"><span class="symbol">🛡️</span><span>EDR / XDR</span></div>
-        <div class="skill"><span class="symbol">🔥</span><span>Firewall Administration</span></div>
-        <div class="skill"><span class="symbol">🔒</span><span>VPN Configuration</span></div>
-        <div class="skill"><span class="symbol">🕷️</span><span>Burp Suite</span></div>
-        <div class="skill"><span class="symbol">📡</span><span>Nmap</span></div>
-        <div class="skill"><span class="symbol">🦈</span><span>Wireshark</span></div>
-        <div class="skill"><span class="symbol">💥</span><span>Metasploit Framework</span></div>
-        <div class="skill"><span class="symbol">🌐</span><span>OWASP Top 10</span></div>
-        <div class="skill"><span class="symbol">🗄️</span><span>SQL & Database Administration</span></div>
+        <div class="skills-grid">
+          <div class="skill"><span class="symbol">🛡️</span><span>Cybersecurity</span></div>
+          <div class="skill"><span class="symbol">🔍</span><span>Security Operations (SOC)</span></div>
+          <div class="skill"><span class="symbol">🚨</span><span>Incident Response</span></div>
+          <div class="skill"><span class="symbol">📊</span><span>Security Monitoring</span></div>
+          <div class="skill"><span class="symbol">🧪</span><span>Penetration Testing</span></div>
+          <div class="skill"><span class="symbol">⌁</span><span>Kali Linux</span></div>
+          <div class="skill"><span class="symbol">🐛</span><span>Vulnerability Assessment</span></div>
+          <div class="skill"><span class="symbol">🌐</span><span>Web Application Security</span></div>
+          <div class="skill"><span class="symbol">🔎</span><span>Network Security</span></div>
+          <div class="skill"><span class="symbol">⬡</span><span>Security Tools</span></div>
+          <div class="skill"><span class="symbol">📁</span><span>Digital Forensics</span></div>
+          <div class="skill"><span class="symbol">🧠</span><span>Threat Intelligence</span></div>
+          <div class="skill"><span class="symbol">📝</span><span>Security Assessment</span></div>
+        </div>
       </div>
-    </div>
 
-    <!-- 4. SOFTWARE DEVELOPMENT -->
-    <div class="skill-category reveal">
-      <h3 class="skill-category-title">
-        Software Development & Programming
-      </h3>
+      <!-- 3. ADVANCED CYBERSECURITY -->
+      <div class="skill-category reveal">
+        <h3 class="skill-category-title">
+          Advanced Cybersecurity Tools & Technologies
+        </h3>
 
-      <div class="skills-grid">
-        <div class="skill"><span class="symbol">Py</span><span>Python</span></div>
-        <div class="skill"><span class="symbol">JS</span><span>JavaScript</span></div>
-        <div class="skill"><span class="symbol">TS</span><span>TypeScript</span></div>
-        <div class="skill"><span class="symbol">◉</span><span>Docker</span></div>
-        <div class="skill"><span class="symbol">⑂</span><span>Git & GitHub</span></div>
+        <div class="skills-grid">
+          <div class="skill"><span class="symbol">🛡️</span><span>EDR / XDR</span></div>
+          <div class="skill"><span class="symbol">🔥</span><span>Firewall Administration</span></div>
+          <div class="skill"><span class="symbol">🔒</span><span>VPN Configuration</span></div>
+          <div class="skill"><span class="symbol">🕷️</span><span>Burp Suite</span></div>
+          <div class="skill"><span class="symbol">📡</span><span>Nmap</span></div>
+          <div class="skill"><span class="symbol">🦈</span><span>Wireshark</span></div>
+          <div class="skill"><span class="symbol">💥</span><span>Metasploit Framework</span></div>
+          <div class="skill"><span class="symbol">🌐</span><span>OWASP Top 10</span></div>
+          <div class="skill"><span class="symbol">🗄️</span><span>SQL & Database Administration</span></div>
+        </div>
       </div>
-    </div>
 
-    <!-- 5. AI & VIBE CODING -->
-    <div class="skill-category reveal">
-      <h3 class="skill-category-title">
-        AI-Powered Development & Vibe Coding
-      </h3>
+      <!-- 4. SOFTWARE DEVELOPMENT -->
+      <div class="skill-category reveal">
+        <h3 class="skill-category-title">
+          Software Development & Programming
+        </h3>
 
-      <div class="skills-grid">
-        <div class="skill"><span class="symbol">🤖</span><span>AI-Assisted Coding</span></div>
-        <div class="skill"><span class="symbol">⚡</span><span>Vibe Coding</span></div>
-        <div class="skill"><span class="symbol">🐞</span><span>AI Code Debugging</span></div>
-        <div class="skill"><span class="symbol">💻</span><span>AI-Powered App Development</span></div>
-        <div class="skill"><span class="symbol">🎨</span><span>AI UI/UX Design</span></div>
-        <div class="skill"><span class="symbol">🧩</span><span>AI Code Generation</span></div>
-        <div class="skill"><span class="symbol">🔄</span><span>AI-Assisted Automation</span></div>
-        <div class="skill"><span class="symbol">🧠</span><span>Prompt Engineering</span></div>
-        <div class="skill"><span class="symbol">🌐</span><span>AI Web Development</span></div>
-        <div class="skill"><span class="symbol">✧</span><span>AI & LLMs</span></div>
+        <div class="skills-grid">
+          <div class="skill"><span class="symbol">Py</span><span>Python</span></div>
+          <div class="skill"><span class="symbol">JS</span><span>JavaScript</span></div>
+          <div class="skill"><span class="symbol">TS</span><span>TypeScript</span></div>
+          <div class="skill"><span class="symbol">◉</span><span>Docker</span></div>
+          <div class="skill"><span class="symbol">⑂</span><span>Git & GitHub</span></div>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
+      <!-- 5. AI & VIBE CODING -->
+      <div class="skill-category reveal">
+        <h3 class="skill-category-title">
+          AI-Powered Development & Vibe Coding
+        </h3>
+
+        <div class="skills-grid">
+          <div class="skill"><span class="symbol">🤖</span><span>AI-Assisted Coding</span></div>
+          <div class="skill"><span class="symbol">⚡</span><span>Vibe Coding</span></div>
+          <div class="skill"><span class="symbol">🐞</span><span>AI Code Debugging</span></div>
+          <div class="skill"><span class="symbol">💻</span><span>AI-Powered App Development</span></div>
+          <div class="skill"><span class="symbol">🎨</span><span>AI UI/UX Design</span></div>
+          <div class="skill"><span class="symbol">🧩</span><span>AI Code Generation</span></div>
+          <div class="skill"><span class="symbol">🔄</span><span>AI-Assisted Automation</span></div>
+          <div class="skill"><span class="symbol">🧠</span><span>Prompt Engineering</span></div>
+          <div class="skill"><span class="symbol">🌐</span><span>AI Web Development</span></div>
+          <div class="skill"><span class="symbol">✧</span><span>AI & LLMs</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- EDUCATION -->
   <section id="education">
     <div class="container">
 
       <div class="section-head reveal">
-        <div class="section-no">03 / Education</div>
+        <div class="section-no">04 / Education</div>
         <h2>Academic Background</h2>
         <p>My formal education in information technology and computer science.</p>
       </div>
@@ -1364,7 +1508,7 @@
     <div class="container">
 
       <div class="section-head reveal">
-        <div class="section-no">04 / Certifications</div>
+        <div class="section-no">05 / Certifications</div>
         <h2>Professional Certifications & Training</h2>
         <p>Completed courses and learning paths. Certificate verification links can be added when available.</p>
       </div>
@@ -1425,7 +1569,7 @@
     <div class="container">
 
       <div class="section-head reveal">
-        <div class="section-no">05 / Featured Projects</div>
+        <div class="section-no">06 / Featured Projects</div>
         <h2>Projects & Practical Work</h2>
         <p>Explore my cybersecurity projects and practical lab work.</p>
       </div>
@@ -1472,10 +1616,10 @@
         <!-- PROJECT 2: CYBERSECURITY HOME LAB -->
         <article class="project">
           <div class="project-visual lab-visual">
-  <img src="./home-lab1.jpeg"
-       alt="AWM Cybersecurity Home Lab workstation">
-</div>
-          
+            <img src="./home-lab1.jpeg"
+                 alt="AWM Cybersecurity Home Lab workstation">
+          </div>
+
           <div class="project-body">
             <h3>Cybersecurity Home Lab</h3>
 
@@ -1510,7 +1654,7 @@
       <div class="contact-panel reveal">
 
         <div class="section-head">
-          <div class="section-no">06 / Contact</div>
+          <div class="section-no">07 / Contact</div>
           <h2>Let's Connect</h2>
           <p>Interested in IT Support, cybersecurity, technical projects, or remote opportunities? Feel free to get in touch.</p>
         </div>
@@ -1521,14 +1665,15 @@
             <small>EMAIL</small>
             <a href="mailto:abdulkadirwaajib@gmail.com">abdulkadirwaajib@gmail.com</a>
           </div>
+
           <div class="contact-item">
-    <small>WhatsApp Number</small>
-    <a href="https://wa.me/252615318378?text=Hello%20Abdulkadir%2C%20I%20visited%20your%20portfolio."
-       target="_blank"
-       rel="noopener noreferrer">
-       +252 615 318 378
-    </a>
-</div>
+            <small>WhatsApp Number</small>
+            <a href="https://wa.me/252615318378?text=Hello%20Abdulkadir%2C%20I%20visited%20your%20portfolio."
+               target="_blank"
+               rel="noopener noreferrer">
+              +252 615 318 378
+            </a>
+          </div>
 
           <div class="contact-item">
             <small>LINKEDIN</small>
