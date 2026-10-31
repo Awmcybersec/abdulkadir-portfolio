@@ -545,6 +545,35 @@
       margin-bottom: 8px;
     }
 
+    .experience-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .experience-meta span {
+      font-size: 10px;
+      color: var(--green);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 5px 9px;
+      background: rgba(53,230,176,.05);
+    }
+
+    .experience-card .company-name {
+      color: #eef8f7;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .experience-card .job-date {
+      color: var(--green);
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+
     /* SKILLS */
 
     .skills-grid {
@@ -661,7 +690,7 @@
       margin-top: 4px;
     }
 
-    /* PROJECTS - TWO EQUAL COLUMNS */
+    /* PROJECTS */
 
     .projects-grid {
       display: grid;
@@ -698,7 +727,6 @@
       letter-spacing: 2px;
     }
 
-    /* AWM NEXUS - VERTICAL */
     .nexus-visual {
       height: 380px;
     }
@@ -710,7 +738,6 @@
       object-position: center;
     }
 
-    /* HOME LAB - HORIZONTAL */
     .lab-visual {
       height: 220px;
     }
@@ -788,7 +815,6 @@
       color: #8affd9;
     }
 
-    /* PROJECT 3: AWM AI SOC SENIOR - SEPARATE IMAGE STYLE */
     .soc-visual {
       height: 220px;
       background: linear-gradient(135deg,#071521,#0b2935);
@@ -799,6 +825,185 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+    }
+
+    /* CV & RESOURCES */
+
+    .asset-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .asset-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: linear-gradient(145deg,rgba(11,34,45,.9),rgba(5,17,25,.95));
+    }
+
+    .asset-card h3 {
+      color: var(--green);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .asset-card p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 17px;
+    }
+
+    .upload-zone {
+      display: block;
+      border: 1px dashed rgba(53,230,176,.5);
+      border-radius: 12px;
+      padding: 25px 15px;
+      text-align: center;
+      background: rgba(53,230,176,.035);
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .upload-zone:hover {
+      border-color: var(--green);
+      background: rgba(53,230,176,.08);
+    }
+
+    .upload-zone strong {
+      display: block;
+      color: var(--green);
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+
+    .upload-zone span {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .upload-zone input {
+      display: block;
+      width: 100%;
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .asset-preview {
+      display: none;
+      margin-top: 18px;
+    }
+
+    .asset-preview.active {
+      display: block;
+    }
+
+    .asset-preview iframe {
+      width: 100%;
+      height: 430px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: white;
+    }
+
+    .asset-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 13px;
+    }
+
+    .asset-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .asset-button:hover {
+      background: var(--green);
+      color: #032018;
+    }
+
+    .asset-button.danger {
+      border-color: #ff7272;
+      color: #ff9292;
+    }
+
+    .asset-button.danger:hover {
+      background: #ff7272;
+      color: #180303;
+    }
+
+    .asset-status {
+      color: var(--green);
+      font-size: 11px;
+      margin-top: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    /* PROJECT EVIDENCE GALLERY */
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 13px;
+      margin-top: 20px;
+    }
+
+    .evidence-item {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      overflow: hidden;
+      background: var(--panel2);
+      min-height: 150px;
+    }
+
+    .evidence-item img {
+      display: block;
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .evidence-item .evidence-caption {
+      padding: 9px;
+      color: var(--muted);
+      font-size: 10px;
+      overflow-wrap: anywhere;
+    }
+
+    .evidence-item .remove-evidence {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 6px;
+      padding: 5px 8px;
+      color: white;
+      background: rgba(100,0,0,.8);
+      cursor: pointer;
+      font-size: 11px;
+    }
+
+    .evidence-empty {
+      padding: 22px;
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      grid-column: 1 / -1;
     }
 
     /* CONTACT */
@@ -1077,7 +1282,6 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      /* On mobile, stack projects vertically */
       .projects-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1093,6 +1297,22 @@
 
       .project p {
         min-height: 0;
+      }
+
+      .asset-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .asset-card {
+        padding: 18px;
+      }
+
+      .asset-preview iframe {
+        height: 350px;
       }
 
       .contact-grid {
@@ -1123,6 +1343,10 @@
       }
 
       .focus-list {
+        grid-template-columns: 1fr;
+      }
+
+      .evidence-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1169,6 +1393,7 @@
       <a href="#education">Education</a>
       <a href="#certifications">Certifications</a>
       <a href="#projects">Projects</a>
+      <a href="#career-assets">CV & Resources</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -1361,6 +1586,86 @@
           </ul>
         </article>
 
+        <!-- PUNT TECH SOMALIA -->
+        <article class="experience-card">
+          <div class="experience-highlight">2017–2022</div>
+          <h3>Administrative & Technical Support Assistant</h3>
+          <div class="company-name">Punt Tech Somalia</div>
+          <div class="job-date">January 2017 – August 2022</div>
+
+          <div class="experience-meta">
+            <span>IT Support</span>
+            <span>Systems Administration</span>
+            <span>Technical Operations</span>
+          </div>
+
+          <p>
+            Supported daily IT operations, computer systems, technical
+            troubleshooting, and infrastructure maintenance.
+          </p>
+
+          <ul>
+            <li>Provided technical support for Windows systems, desktop hardware and software.</li>
+            <li>Assisted with systems administration and routine IT maintenance.</li>
+            <li>Diagnosed and resolved common hardware, software and network issues.</li>
+            <li>Supported daily technology operations and service delivery.</li>
+            <li>Maintained IT documentation and assisted with technical procedures.</li>
+          </ul>
+        </article>
+
+        <!-- PRODUCTIVE PLAYHOUSE -->
+        <article class="experience-card">
+          <div class="experience-highlight">AI Training</div>
+          <h3>AI Chatbot Training & Evaluation</h3>
+          <div class="company-name">Productive Playhouse</div>
+          <div class="job-date">May 2026 – Present · Remote</div>
+
+          <div class="experience-meta">
+            <span>AI Evaluation</span>
+            <span>Somali & English</span>
+            <span>Google Gemini</span>
+          </div>
+
+          <p>
+            Contribute to AI chatbot training and response evaluation,
+            focusing on language quality, accuracy and contextual understanding.
+          </p>
+
+          <ul>
+            <li>Evaluated AI-generated responses in Somali and English.</li>
+            <li>Reviewed accuracy, relevance, clarity and contextual quality.</li>
+            <li>Identified incomplete, inaccurate and misleading responses.</li>
+            <li>Provided feedback to improve chatbot response quality.</li>
+            <li>Worked with AI-assisted evaluation and training tasks.</li>
+          </ul>
+        </article>
+
+        <!-- SOMALI INNOVATION HUB -->
+        <article class="experience-card">
+          <div class="experience-highlight">IT & Security</div>
+          <h3>Head Officer – IT & Cybersecurity</h3>
+          <div class="company-name">Somali Innovation Hub (SiHub)</div>
+          <div class="job-date">April 2026 – Present</div>
+
+          <div class="experience-meta">
+            <span>IT Operations</span>
+            <span>Cybersecurity</span>
+            <span>Technical Leadership</span>
+          </div>
+
+          <p>
+            Supporting organizational technology operations and cybersecurity
+            activities while contributing to technical problem-solving.
+          </p>
+
+          <ul>
+            <li>Support IT and cybersecurity-related activities.</li>
+            <li>Contribute to technology operations and technical problem-solving.</li>
+            <li>Apply IT and security knowledge to organizational technology needs.</li>
+            <li>Support reliable and secure technology practices.</li>
+          </ul>
+        </article>
+
       </div>
     </div>
   </section>
@@ -1378,7 +1683,6 @@
         </p>
       </div>
 
-      <!-- 1. IT INFRASTRUCTURE -->
       <div class="skill-category reveal">
         <h3 class="skill-category-title">
           IT Infrastructure & System Administration
@@ -1398,7 +1702,6 @@
         </div>
       </div>
 
-      <!-- 2. CYBERSECURITY & SOC -->
       <div class="skill-category reveal">
         <h3 class="skill-category-title">
           Cybersecurity & SOC Operations
@@ -1421,7 +1724,6 @@
         </div>
       </div>
 
-      <!-- 3. ADVANCED CYBERSECURITY -->
       <div class="skill-category reveal">
         <h3 class="skill-category-title">
           Advanced Cybersecurity Tools & Technologies
@@ -1440,7 +1742,6 @@
         </div>
       </div>
 
-      <!-- 4. SOFTWARE DEVELOPMENT -->
       <div class="skill-category reveal">
         <h3 class="skill-category-title">
           Software Development & Programming
@@ -1455,7 +1756,6 @@
         </div>
       </div>
 
-      <!-- 5. AI & VIBE CODING -->
       <div class="skill-category reveal">
         <h3 class="skill-category-title">
           AI-Powered Development & Vibe Coding
@@ -1692,6 +1992,104 @@
     </div>
   </section>
 
+  <!-- CV & CAREER RESOURCES -->
+  <section id="career-assets">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <div class="section-no">07 / Career Resources</div>
+        <h2>CV & Project Evidence</h2>
+        <p>
+          Review a CV document and explore visual evidence of selected
+          technical and cybersecurity projects.
+        </p>
+      </div>
+
+      <div class="asset-grid reveal">
+
+        <!-- CV UPLOAD -->
+        <article class="asset-card">
+          <h3>Professional CV</h3>
+          <p>
+            Select a PDF CV to preview it in your browser and download
+            the selected document.
+          </p>
+
+          <label class="upload-zone">
+            <strong>Upload Your CV (PDF)</strong>
+            <span>PDF format · Maximum file size: 10 MB</span>
+            <input
+              type="file"
+              id="cvUpload"
+              accept="application/pdf,.pdf"
+            >
+          </label>
+
+          <div class="asset-status" id="cvStatus" aria-live="polite">
+            No CV selected.
+          </div>
+
+          <div class="asset-preview" id="cvPreview">
+            <iframe id="cvFrame" title="CV PDF Preview"></iframe>
+
+            <div class="asset-actions">
+              <a class="asset-button" id="cvDownload" href="#" download>
+                Download CV
+              </a>
+
+              <button class="asset-button danger" id="removeCV" type="button">
+                Remove Preview
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT EVIDENCE -->
+        <article class="asset-card">
+          <h3>Project Evidence Gallery</h3>
+          <p>
+            Select up to five project screenshots or images to preview
+            your technical work.
+          </p>
+
+          <label class="upload-zone">
+            <strong>Upload Project Images</strong>
+            <span>JPG, JPEG, PNG or WEBP · Maximum 5 images</span>
+            <input
+              type="file"
+              id="evidenceUpload"
+              accept="image/jpeg,image/png,image/webp"
+              multiple
+            >
+          </label>
+
+          <div class="asset-status" id="evidenceStatus" aria-live="polite">
+            No project images selected.
+          </div>
+
+          <div class="evidence-grid" id="evidenceGrid">
+            <div class="evidence-empty">
+              Your selected project screenshots will appear here.
+            </div>
+          </div>
+
+          <div class="asset-actions">
+            <button class="asset-button danger" id="clearEvidence" type="button">
+              Clear All Images
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <p style="color:var(--muted);font-size:11px;margin-top:18px;">
+        Note: Files selected here are previewed locally in your browser.
+        They are not uploaded to the website or stored for other visitors.
+      </p>
+
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
@@ -1699,7 +2097,7 @@
       <div class="contact-panel reveal">
 
         <div class="section-head">
-          <div class="section-no">07 / Contact</div>
+          <div class="section-no">08 / Contact</div>
           <h2>Let's Connect</h2>
           <p>Interested in IT Support, cybersecurity, technical projects, or remote opportunities? Feel free to get in touch.</p>
         </div>
@@ -1812,6 +2210,186 @@
   }, { rootMargin: '-35% 0px -55% 0px' });
 
   sections.forEach(s => navObserver.observe(s));
+
+
+  /* =====================================================
+     CV PDF PREVIEW AND DOWNLOAD
+  ===================================================== */
+
+  const cvUpload = document.getElementById('cvUpload');
+  const cvPreview = document.getElementById('cvPreview');
+  const cvFrame = document.getElementById('cvFrame');
+  const cvDownload = document.getElementById('cvDownload');
+  const cvStatus = document.getElementById('cvStatus');
+  const removeCV = document.getElementById('removeCV');
+
+  let cvObjectURL = null;
+
+  cvUpload.addEventListener('change', () => {
+    const file = cvUpload.files[0];
+
+    if (!file) return;
+
+    if (
+      file.type !== 'application/pdf' &&
+      !file.name.toLowerCase().endsWith('.pdf')
+    ) {
+      cvStatus.textContent = 'Please select a valid PDF file.';
+      cvUpload.value = '';
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      cvStatus.textContent = 'File is too large. Maximum size is 10 MB.';
+      cvUpload.value = '';
+      return;
+    }
+
+    if (cvObjectURL) {
+      URL.revokeObjectURL(cvObjectURL);
+    }
+
+    cvObjectURL = URL.createObjectURL(file);
+
+    cvFrame.src = cvObjectURL;
+    cvDownload.href = cvObjectURL;
+    cvDownload.download = file.name;
+
+    cvPreview.classList.add('active');
+
+    cvStatus.textContent =
+      'Selected: ' + file.name +
+      ' (' + (file.size / 1024 / 1024).toFixed(2) + ' MB)';
+  });
+
+  removeCV.addEventListener('click', () => {
+    if (cvObjectURL) {
+      URL.revokeObjectURL(cvObjectURL);
+      cvObjectURL = null;
+    }
+
+    cvFrame.src = '';
+    cvDownload.removeAttribute('href');
+    cvPreview.classList.remove('active');
+    cvUpload.value = '';
+    cvStatus.textContent = 'No CV selected.';
+  });
+
+
+  /* =====================================================
+     PROJECT EVIDENCE IMAGE GALLERY
+  ===================================================== */
+
+  const evidenceUpload = document.getElementById('evidenceUpload');
+  const evidenceGrid = document.getElementById('evidenceGrid');
+  const evidenceStatus = document.getElementById('evidenceStatus');
+  const clearEvidence = document.getElementById('clearEvidence');
+
+  let evidenceFiles = [];
+
+  function renderEvidence() {
+    evidenceGrid.innerHTML = '';
+
+    if (evidenceFiles.length === 0) {
+      evidenceGrid.innerHTML = `
+        <div class="evidence-empty">
+          Your selected project screenshots will appear here.
+        </div>
+      `;
+
+      evidenceStatus.textContent = 'No project images selected.';
+      return;
+    }
+
+    evidenceFiles.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'evidence-item';
+
+      const image = document.createElement('img');
+      image.src = item.url;
+      image.alt = 'Project evidence ' + (index + 1);
+
+      const caption = document.createElement('div');
+      caption.className = 'evidence-caption';
+      caption.textContent = item.file.name;
+
+      const remove = document.createElement('button');
+      remove.className = 'remove-evidence';
+      remove.type = 'button';
+      remove.textContent = 'Remove';
+      remove.setAttribute('aria-label', 'Remove ' + item.file.name);
+
+      remove.addEventListener('click', () => {
+        URL.revokeObjectURL(item.url);
+        evidenceFiles.splice(index, 1);
+        renderEvidence();
+      });
+
+      card.appendChild(image);
+      card.appendChild(caption);
+      card.appendChild(remove);
+
+      evidenceGrid.appendChild(card);
+    });
+
+    evidenceStatus.textContent =
+      evidenceFiles.length + ' of 5 project images selected.';
+  }
+
+  evidenceUpload.addEventListener('change', () => {
+    const selectedFiles = Array.from(evidenceUpload.files);
+
+    const allowedTypes = [
+      'image/jpeg',
+      'image/png',
+      'image/webp'
+    ];
+
+    for (const file of selectedFiles) {
+      if (!allowedTypes.includes(file.type)) {
+        evidenceStatus.textContent =
+          'Unsupported image format: ' + file.name;
+        continue;
+      }
+
+      if (file.size > 5 * 1024 * 1024) {
+        evidenceStatus.textContent =
+          file.name + ' exceeds the 5 MB limit.';
+        continue;
+      }
+
+      if (evidenceFiles.length >= 5) {
+        evidenceStatus.textContent =
+          'Maximum of 5 project images allowed.';
+        break;
+      }
+
+      const alreadyAdded = evidenceFiles.some(
+        item =>
+          item.file.name === file.name &&
+          item.file.size === file.size
+      );
+
+      if (alreadyAdded) continue;
+
+      evidenceFiles.push({
+        file: file,
+        url: URL.createObjectURL(file)
+      });
+    }
+
+    evidenceUpload.value = '';
+    renderEvidence();
+  });
+
+  clearEvidence.addEventListener('click', () => {
+    evidenceFiles.forEach(item => {
+      URL.revokeObjectURL(item.url);
+    });
+
+    evidenceFiles = [];
+    renderEvidence();
+  });
 </script>
 
 </body>
