@@ -955,7 +955,7 @@
 
     .evidence-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(2,minmax(0,1fr));
       gap: 13px;
       margin-top: 20px;
     }
@@ -966,44 +966,80 @@
       border-radius: 11px;
       overflow: hidden;
       background: var(--panel2);
-      min-height: 150px;
+      cursor: zoom-in;
+      transition: .25s;
+    }
+
+    .evidence-item:hover {
+      border-color: var(--green);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0,0,0,.3);
     }
 
     .evidence-item img {
       display: block;
       width: 100%;
-      height: 180px;
+      height: 220px;
       object-fit: cover;
+      transition: transform .35s;
     }
 
-    .evidence-item .evidence-caption {
-      padding: 9px;
-      color: var(--muted);
-      font-size: 10px;
-      overflow-wrap: anywhere;
+    .evidence-item:hover img {
+      transform: scale(1.04);
     }
 
-    .evidence-item .remove-evidence {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      border: 1px solid rgba(255,255,255,.3);
-      border-radius: 6px;
-      padding: 5px 8px;
-      color: white;
-      background: rgba(100,0,0,.8);
-      cursor: pointer;
-      font-size: 11px;
-    }
-
-    .evidence-empty {
-      padding: 22px;
-      border: 1px dashed var(--line);
-      border-radius: 10px;
-      color: var(--muted);
+    .evidence-caption {
+      padding: 11px;
+      color: var(--green);
       font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* FULLSCREEN IMAGE VIEWER */
+
+    .image-viewer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,.96);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 55px 20px 25px;
+    }
+
+    .image-viewer.active {
+      display: flex;
+    }
+
+    .image-viewer img {
+      max-width: 95%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 15px 60px rgba(0,0,0,.6);
+    }
+
+    .image-viewer p {
+      color: var(--green);
+      margin-top: 15px;
+      font-size: 13px;
       text-align: center;
-      grid-column: 1 / -1;
+    }
+
+    .image-viewer .close-viewer {
+      position: absolute;
+      top: 18px;
+      right: 25px;
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--green);
+      border-radius: 50%;
+      background: rgba(5,20,25,.9);
+      color: var(--green);
+      font-size: 28px;
+      cursor: pointer;
     }
 
     /* CONTACT */
@@ -1304,7 +1340,11 @@
       }
 
       .evidence-grid {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .evidence-item img {
+        height: 155px;
       }
 
       .asset-card {
@@ -1313,6 +1353,11 @@
 
       .asset-preview iframe {
         height: 350px;
+      }
+
+      .image-viewer img {
+        max-width: 100%;
+        max-height: 75vh;
       }
 
       .contact-grid {
@@ -2044,51 +2089,90 @@
           </div>
         </article>
 
-        <!-- PROJECT EVIDENCE -->
+        <!-- STATIC PROJECT EVIDENCE GALLERY -->
         <article class="asset-card">
           <h3>Project Evidence Gallery</h3>
+
           <p>
-            Select up to five project screenshots or images to preview
-            your technical work.
+            Explore screenshots and visual evidence from my cybersecurity
+            projects, AWM SOC platform, and practical Home Lab.
+            Click any image to view it in fullscreen.
           </p>
 
-          <label class="upload-zone">
-            <strong>Upload Project Images</strong>
-            <span>JPG, JPEG, PNG or WEBP · Maximum 5 images</span>
-            <input
-              type="file"
-              id="evidenceUpload"
-              accept="image/jpeg,image/png,image/webp"
-              multiple
-            >
-          </label>
-
-          <div class="asset-status" id="evidenceStatus" aria-live="polite">
-            No project images selected.
-          </div>
-
           <div class="evidence-grid" id="evidenceGrid">
-            <div class="evidence-empty">
-              Your selected project screenshots will appear here.
-            </div>
-          </div>
 
-          <div class="asset-actions">
-            <button class="asset-button danger" id="clearEvidence" type="button">
-              Clear All Images
-            </button>
+            <div class="evidence-item"
+                 onclick="openEvidenceImage('./home-lab1.jpeg', 'Cybersecurity Home Lab')">
+              <img src="./five.jpg"
+                   alt="Cybersecurity Home Lab"
+                   loading="lazy">
+              <div class="evidence-caption">Cybersecurity Home Lab</div>
+            </div>
+
+            <div class="evidence-item"
+                 onclick="openEvidenceImage('./dashboar.jpg', 'AWM AI SOC SENIOR Dashboard')">
+              <img src="./one.jpg"
+                   alt="AWM AI SOC SENIOR Dashboard"
+                   loading="lazy">
+              <div class="evidence-caption">AWM AI SOC SENIOR Dashboard</div>
+            </div>
+
+            <div class="evidence-item"
+                 onclick="openEvidenceImage('./nexus-1.jpg', 'AWM NEXUS Platform')">
+              <img src="./two.jpg"
+                   alt="AWM NEXUS Platform"
+                   loading="lazy">
+              <div class="evidence-caption">AWM NEXUS Platform</div>
+            </div>
+
+            <div class="evidence-item"
+                 onclick="openEvidenceImage('./awm-soc-dashboard.png', 'AWM SOC Security Operations')">
+              <img src="./three.jpg"
+                   alt="AWM SOC Security Operations"
+                   loading="lazy">
+              <div class="evidence-caption">AWM SOC Security Operations</div>
+            </div>
+
+            <div class="evidence-item"
+                 onclick="openEvidenceImage('./awm-soc-home-lab.png', 'AWM SOC Home Lab Evidence')">
+              <img src="./four.jpg"
+                   alt="AWM SOC Home Lab Evidence"
+                   loading="lazy">
+              <div class="evidence-caption">AWM SOC Home Lab Evidence</div>
+            </div>
+
           </div>
         </article>
 
       </div>
 
       <p style="color:var(--muted);font-size:11px;margin-top:18px;">
-        Note: Files selected here are previewed locally in your browser.
-        They are not uploaded to the website or stored for other visitors.
+        Note: Project evidence images are loaded from the website's image files.
+        They are visible to visitors when the image files are included in the website.
       </p>
 
     </div>
   </section>
+
+  <!-- FULLSCREEN IMAGE VIEWER -->
+  <div class="image-viewer"
+       id="imageViewer"
+       role="dialog"
+       aria-modal="true"
+       aria-label="Project image viewer"
+       onclick="closeEvidenceImage()">
+
+    <button class="close-viewer"
+            type="button"
+            aria-label="Close image"
+            onclick="event.stopPropagation(); closeEvidenceImage();">
+      &times;
+    </button>
+
+    <img id="fullEvidenceImage" src="" alt="">
+
+    <p id="fullEvidenceCaption"></p>
+  </div>
 
   <!-- CONTACT -->
   <section id="contact">
@@ -2277,118 +2361,36 @@
 
 
   /* =====================================================
-     PROJECT EVIDENCE IMAGE GALLERY
+     PROJECT EVIDENCE GALLERY - FULLSCREEN IMAGE VIEWER
   ===================================================== */
 
-  const evidenceUpload = document.getElementById('evidenceUpload');
-  const evidenceGrid = document.getElementById('evidenceGrid');
-  const evidenceStatus = document.getElementById('evidenceStatus');
-  const clearEvidence = document.getElementById('clearEvidence');
+  const imageViewer = document.getElementById('imageViewer');
+  const fullEvidenceImage = document.getElementById('fullEvidenceImage');
+  const fullEvidenceCaption = document.getElementById('fullEvidenceCaption');
 
-  let evidenceFiles = [];
+  function openEvidenceImage(src, caption) {
+    fullEvidenceImage.src = src;
+    fullEvidenceImage.alt = caption;
+    fullEvidenceCaption.textContent = caption;
 
-  function renderEvidence() {
-    evidenceGrid.innerHTML = '';
-
-    if (evidenceFiles.length === 0) {
-      evidenceGrid.innerHTML = `
-        <div class="evidence-empty">
-          Your selected project screenshots will appear here.
-        </div>
-      `;
-
-      evidenceStatus.textContent = 'No project images selected.';
-      return;
-    }
-
-    evidenceFiles.forEach((item, index) => {
-      const card = document.createElement('div');
-      card.className = 'evidence-item';
-
-      const image = document.createElement('img');
-      image.src = item.url;
-      image.alt = 'Project evidence ' + (index + 1);
-
-      const caption = document.createElement('div');
-      caption.className = 'evidence-caption';
-      caption.textContent = item.file.name;
-
-      const remove = document.createElement('button');
-      remove.className = 'remove-evidence';
-      remove.type = 'button';
-      remove.textContent = 'Remove';
-      remove.setAttribute('aria-label', 'Remove ' + item.file.name);
-
-      remove.addEventListener('click', () => {
-        URL.revokeObjectURL(item.url);
-        evidenceFiles.splice(index, 1);
-        renderEvidence();
-      });
-
-      card.appendChild(image);
-      card.appendChild(caption);
-      card.appendChild(remove);
-
-      evidenceGrid.appendChild(card);
-    });
-
-    evidenceStatus.textContent =
-      evidenceFiles.length + ' of 5 project images selected.';
+    imageViewer.classList.add('active');
+    document.body.style.overflow = 'hidden';
   }
 
-  evidenceUpload.addEventListener('change', () => {
-    const selectedFiles = Array.from(evidenceUpload.files);
+  function closeEvidenceImage() {
+    imageViewer.classList.remove('active');
+    document.body.style.overflow = '';
+    fullEvidenceImage.src = '';
+  }
 
-    const allowedTypes = [
-      'image/jpeg',
-      'image/png',
-      'image/webp'
-    ];
-
-    for (const file of selectedFiles) {
-      if (!allowedTypes.includes(file.type)) {
-        evidenceStatus.textContent =
-          'Unsupported image format: ' + file.name;
-        continue;
-      }
-
-      if (file.size > 5 * 1024 * 1024) {
-        evidenceStatus.textContent =
-          file.name + ' exceeds the 5 MB limit.';
-        continue;
-      }
-
-      if (evidenceFiles.length >= 5) {
-        evidenceStatus.textContent =
-          'Maximum of 5 project images allowed.';
-        break;
-      }
-
-      const alreadyAdded = evidenceFiles.some(
-        item =>
-          item.file.name === file.name &&
-          item.file.size === file.size
-      );
-
-      if (alreadyAdded) continue;
-
-      evidenceFiles.push({
-        file: file,
-        url: URL.createObjectURL(file)
-      });
-    }
-
-    evidenceUpload.value = '';
-    renderEvidence();
+  fullEvidenceImage.addEventListener('click', event => {
+    event.stopPropagation();
   });
 
-  clearEvidence.addEventListener('click', () => {
-    evidenceFiles.forEach(item => {
-      URL.revokeObjectURL(item.url);
-    });
-
-    evidenceFiles = [];
-    renderEvidence();
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && imageViewer.classList.contains('active')) {
+      closeEvidenceImage();
+    }
   });
 </script>
 
